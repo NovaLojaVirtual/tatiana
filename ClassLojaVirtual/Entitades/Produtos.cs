@@ -16,6 +16,8 @@ namespace ClassLojaVirtual.Entitades
 
         public decimal Preco { get; set; }
 
+        public string Categoria { get; set; }  
 
     }
 }
+  
