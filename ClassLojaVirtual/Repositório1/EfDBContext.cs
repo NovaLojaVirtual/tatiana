@@ -12,13 +12,20 @@ namespace ClassLojaVirtual.Repositório1
 {
   public  class EfDBContext : DbContext
     {
+        public EfDBContext():base("EfDBContext")
+        {
+
+        }
+
         public DbSet<Produtos> Produto { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            
+            modelBuilder.Entity<Produtos>().ToTable("Produtos");//lista de produtos na tabela
         }
-
+         
 
 
     }
